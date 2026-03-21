@@ -25,6 +25,12 @@ where $Z \sim \mathcal{N}(0,1)$.
 * **Historical VaR (95%):** Computes the expected maximum loss under normal market conditions.
 * **Black Swan Stress Test:** Simulates a severe market crash by forcing the expected return ($\mu$) to $-20\%$ and doubling the volatility ($\sigma$). This reveals the "Stressed VaR", providing critical insight for risk management.
 
+## ⚠️ Model Assumptions & Limitations
+To ensure academic rigor, the following limitations of the current model are acknowledged:
+* **Historical Bias (Bull Market):** The Monte Carlo simulation relies on historical drift ($\mu$) and volatility ($\sigma$) from the past 5 years, a period characterized by strong market rallies. This leads to overly optimistic VaR projections under normal conditions, highlighting the necessity of the **Stress Testing** module.
+* **Constant Volatility (GBM Limitation):** The Geometric Brownian Motion assumes constant volatility. In reality, financial markets exhibit volatility clustering and heavy tails. Future iterations could implement Stochastic Volatility models (e.g., the Heston Model).
+* **FX Risk Ignored:** The portfolio mixes EUR-denominated (VUAA.DE, AETF.AT) and USD-denominated (GLD, TLT) assets. For the scope of this project, exchange rate fluctuations were kept constant.
+
 ## 🚀 How to Run
 Ensure you have the required libraries installed:
 `pip install numpy pandas matplotlib scipy yfinance`
