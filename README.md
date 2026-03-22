@@ -36,4 +36,4 @@ Ensure you have the required libraries installed:
 `pip install numpy pandas matplotlib scipy yfinance`
 
 Run the main script:
-`python main.py`
+`First_Quant_Project.py`
